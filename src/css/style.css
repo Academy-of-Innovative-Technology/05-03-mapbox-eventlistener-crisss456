@@ -30,3 +30,7 @@ body {
 	z-index: 5;
 	border: solid 1px #6c5d5d;
 }
+#map {
+  width: 100%;
+  height: 400px; 
+}

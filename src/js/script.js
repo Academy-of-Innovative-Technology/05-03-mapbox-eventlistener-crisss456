@@ -1,6 +1,4 @@
-
-mapboxgl.accessToken = ' ACCESS TOKEN ';
-
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3JpczEyIiwiYSI6ImNtb2JydG96bTA0emoyb29uN2swbm9uNTUifQ.pkiAVE7TKqZTTv2HaW2uwQ';
 
 var mapProps = {
 	container: 'map',
@@ -10,8 +8,17 @@ var mapProps = {
 
 var map = new mapboxgl.Map(mapProps);
 
-map.on(" event ", function(evt){
+let counter = 0;
 
-	
-	
+const inputBox = document.getElementById("clickCount");
+
+map.on("click", function (evt) {
+	counter += 1;
+	inputBox.value = counter;
 });
+
+map.on("dblclick", function (evt) {
+	counter += 4;
+	inputBox.value = counter;
+});
+map.doubleClickZoom.disable();
